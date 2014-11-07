@@ -1,5 +1,5 @@
 {
-  "name": "psq",
+  "name": "psqueue",
   "version": "0.0.1",
   "description": "A module to execute a list of promises in order and synchronously",
   "main": "index.js",
