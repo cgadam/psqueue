@@ -1,0 +1,31 @@
+{
+  "name": "psq",
+  "version": "0.0.1",
+  "description": "A module to execute a list of promises in order and synchronously",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cgadam/psq.git"
+  },
+  "keywords": [
+    "Q",
+    "promises",
+    "array",
+    "sync"
+  ],
+  "devDependencies": {
+    "q": "1.0.1"
+  },
+  "author": {
+    "name": "Christian Adam",
+    "email": "christian.g.adam@gmail.com"
+  },
+  "license": {
+    "type": "WTFPL",
+    "url": "http://www.wtfpl.net/txt/copying/"
+  },
+  "bugs": {
+    "url": "https://github.com/cgadam/psq/issues"
+  },
+  "homepage": "https://github.com/cgadam/psq"
+}
