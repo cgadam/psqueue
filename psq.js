@@ -1,19 +1,21 @@
 var Q = require('q');
 
-var Promise = function(fn, params){
+function Promise(fn, params){
   this.fn_ = fn;
   this.params_ = params;
 }
 
-var PromisesSyncQueu = function(){
+function PromisesSyncQueu(){
   this.internalQueu_=[];
 }
 
-PromisesSyncQueu.prototype.addPromise = function(fn, params){
-  if(Object.prototype.toString.call( params ) !== '[object Array]' ) {
-    params = [].concat(params);
+PromisesSyncQueu.prototype.addPromise = function(fn){
+  var argsLength = arguments.length;
+  var parameters = [];
+  for(var i=1; i<argsLength; i++){
+    parameters.push(arguments[i]);
   }
-  var promise = new Promise(fn, params);
+  var promise = new Promise(fn, parameters);
   this.internalQueu_.push(promise);
 }
 
