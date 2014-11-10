@@ -1,6 +1,6 @@
 {
   "name": "psqueue",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A module to execute a list of promises in order and synchronously",
   "main": "index.js",
   "repository": {
