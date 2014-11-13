@@ -73,7 +73,7 @@ all of them is nothing but the time it took for the latest one to finish.
 
 ```javascript
 var Q = require('q');
-var PromisesSyncQueue = require('psqueue');
+var PSQueue = require('psqueue');
 
 var timestamp = (new Date()).getTime();
 var arr = ['A', 'B', 'C'];
@@ -88,7 +88,7 @@ function doPromiseToItem(item){
   return deferred.promise;
 }
 
-var promisesQueue = new PromisesSyncQueue();
+var promisesQueue = new PSQueue();
 
 for(var i=0; i<arr.length;i++){
   var item = arr[i];
@@ -126,7 +126,7 @@ Example:
 
 ```javascript
 var Q = require('q');
-var PromisesSyncQueue = require('psqueue');
+var PSQueue = require('psqueue');
 
 var timestamp = (new Date()).getTime();
 var arr = ['A', 'B', 'C', 'D'];
@@ -147,7 +147,7 @@ function doPromiseToItem(item){
   return deferred.promise;
 }
 
-var promisesQueue = new PromisesSyncQueu();
+var promisesQueue = new PSQueue();
 
 for(var i=0; i<arr.length;i++){
   var item = arr[i];
