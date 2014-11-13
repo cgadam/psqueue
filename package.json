@@ -8,7 +8,7 @@
     "url": "https://github.com/cgadam/psqueue.git"
   },
   "keywords": [
-    "Q",
+    "q",
     "promise",
     "promises",
     "execute",
@@ -16,7 +16,8 @@
     "array",
     "list",
     "sync",
-    "synchronously"
+    "synchronously",
+    "queue"
   ],
   "dependencies": {
     "q": "*"
