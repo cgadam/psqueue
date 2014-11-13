@@ -9,9 +9,14 @@
   },
   "keywords": [
     "Q",
+    "promise",
     "promises",
+    "execute",
+    "run",
     "array",
-    "sync"
+    "list",
+    "sync",
+    "synchronously"
   ],
   "devDependencies": {
     "q": "*"
