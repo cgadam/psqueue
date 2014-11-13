@@ -5,11 +5,11 @@ function Promise(fn, params){
   this.params_ = params;
 }
 
-function PromisesSyncQueu(){
+function PromisesSyncQueue(){
   this.internalQueu_=[];
 }
 
-PromisesSyncQueu.prototype.addPromise = function(fn){
+PromisesSyncQueue.prototype.addPromise = function(fn){
   var argsLength = arguments.length;
   var parameters = [];
   for(var i=1; i<argsLength; i++){
@@ -19,7 +19,7 @@ PromisesSyncQueu.prototype.addPromise = function(fn){
   this.internalQueu_.push(promise);
 }
 
-PromisesSyncQueu.prototype.resolveAllSync = function(){
+PromisesSyncQueue.prototype.resolveAllSync = function(){
   var deferred = Q.defer();
   var self = this;
   if(this.internalQueu_.length!==0){
@@ -40,4 +40,4 @@ PromisesSyncQueu.prototype.resolveAllSync = function(){
   return deferred.promise;
 }
 
-module.exports = PromisesSyncQueu;
+module.exports = PromisesSyncQueue;

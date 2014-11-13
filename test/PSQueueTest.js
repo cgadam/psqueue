@@ -1,5 +1,5 @@
 var Q = require('q');
-var PromisesSyncQueu = require('../psq');
+var PromisesSyncQueue = require('../psqueue');
 
 var timestamp = (new Date()).getTime();
 var arr = ['A', 'B', 'C'];
@@ -14,14 +14,14 @@ function doPromiseToItem(item){
   return deferred.promise;
 }
 
-var promisesQueu = new PromisesSyncQueu();
+var promisesQueue = new PromisesSyncQueue();
 
 for(var i=0; i<arr.length;i++){
   var item = arr[i];
-  promisesQueu.addPromise(doPromiseToItem, item);
+  promisesQueue.addPromise(doPromiseToItem, item);
 }
 
-promisesQueu.resolveAllSync().then(function(){
+promisesQueue.resolveAllSync().then(function(){
   var duration = Math.round(((((new Date()).getTime()) - timestamp)/1000)*100)/100;
   console.log('ALL SOLVED in ' + duration + ' seconds.');
 });

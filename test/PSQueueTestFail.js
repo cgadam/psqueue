@@ -1,5 +1,5 @@
 var Q = require('q');
-var PromisesSyncQueu = require('../psq');
+var PromisesSyncQueue = require('../psqueue');
 
 var timestamp = (new Date()).getTime();
 var arr = ['A', 'B', 'C', 'D'];
@@ -20,14 +20,14 @@ function doPromiseToItem(item){
   return deferred.promise;
 }
 
-var promisesQueu = new PromisesSyncQueu();
+var promisesQueue = new PromisesSyncQueue();
 
 for(var i=0; i<arr.length;i++){
   var item = arr[i];
-  promisesQueu.addPromise(doPromiseToItem, item);
+  promisesQueue.addPromise(doPromiseToItem, item);
 }
 
-promisesQueu.resolveAllSync().fail(function(err){
+promisesQueue.resolveAllSync().fail(function(err){
   var duration = Math.round(((((new Date()).getTime()) - timestamp)/1000)*100)/100;
   console.log('FAILED because I found ' + err + ' after ' + duration + ' seconds.');
 });

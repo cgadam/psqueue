@@ -1,1 +1,1 @@
-module.exports = require('./psq');
+module.exports = require('./psqueue');
