@@ -175,10 +175,10 @@ This is one possible output you might get:
     FAILED because I found C after 12.11 seconds.
 ```
 
-As you can see D was never executed.
+As you can see **D** was never executed.
 
 
-** What if one promise needs to pass a value to another promise in the chain? **
+**What if one promise needs to pass a value to another promise in the chain?**
 
 This scenario is NOT contemplated by this module as when you create the promises that you want to add to the 
 queue you're supposed to provide the exact parameters with which the promise will be called.
