@@ -18,6 +18,9 @@
     "sync",
     "synchronously"
   ],
+  "dependencies": {
+    "q": "*"
+  },
   "devDependencies": {
     "q": "*"
   },
