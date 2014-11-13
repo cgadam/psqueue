@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cgadam/psq.git"
+    "url": "https://github.com/cgadam/psqueue.git"
   },
   "keywords": [
     "Q",
@@ -25,7 +25,7 @@
     "url": "http://www.wtfpl.net/txt/copying/"
   },
   "bugs": {
-    "url": "https://github.com/cgadam/psq/issues"
+    "url": "https://github.com/cgadam/psqueue/issues"
   },
-  "homepage": "https://github.com/cgadam/psq"
+  "homepage": "https://github.com/cgadam/psqueue"
 }
