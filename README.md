@@ -1,5 +1,7 @@
 # PSQueue (Promises Sync Queue)
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cgadam/psqueue?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ### Getting async ducks in a row.
 
 Have you ever find yourself dealing with this problem: you need to execute async operations (encapsulated in Q promises)
