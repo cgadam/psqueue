@@ -1,0 +1,8 @@
+v0.0.6:
+  date: 2015-10-07
+  changes:
+    - It is possible now to get the list of result values.
+    - Introducing "torch" objects that can be passed among functions in the queue.
+    - Possible exceptions of the functions in the queue are now handled and returned as part of rejection value.
+    - Improved documentation adding dependencies state.
+    - Introducing alias all and allSync for resolveAllSync

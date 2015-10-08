@@ -1,6 +1,6 @@
 {
   "name": "psqueue",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A module to execute a list of promises in order and synchronously",
   "main": "index.js",
   "repository": {
@@ -17,22 +17,17 @@
     "list",
     "sync",
     "synchronously",
-    "queue"
+    "queue",
+    "torch"
   ],
   "dependencies": {
-    "q": "*"
-  },
-  "devDependencies": {
     "q": "*"
   },
   "author": {
     "name": "Christian Adam",
     "email": "christian.g.adam@gmail.com"
   },
-  "license": {
-    "type": "WTFPL",
-    "url": "http://www.wtfpl.net/txt/copying/"
-  },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/cgadam/psqueue/issues"
   },

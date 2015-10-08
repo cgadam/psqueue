@@ -23,9 +23,37 @@
 */
 
 /**
-  @overview The main of PSQueue.
+  @overview A test file for showing how to use PSQueue. This test represent a happy scenario.
   @author Christian Adam
 */
 
 /* jshint node:true */
-module.exports = require('./psqueue');
+var Q = require('q'),
+  PSQueue = require('../psqueue'),
+  timestamp = (new Date()).getTime(),
+  arr = ['A', 'B', 'C'],
+  promisesQueue = new PSQueue();
+
+function doPromiseToItem(item, torch) {
+  var deferred = Q.defer();
+  var randomFactor = 10000 * Math.random();
+  setTimeout(function (rand) {
+    console.log(item + ' solved after ' + torch.text + ' taking random ' + (Math.round((rand / 1000) * 100) / 100) + ' secs.');
+    torch.text = (torch.text === 'BEGGINING OF TIME' ? item : (torch.text + ',' + item));
+    deferred.resolve(item + ':OK');
+  }, randomFactor, randomFactor);
+  return deferred.promise;
+}
+
+for (var i = 0; i < arr.length; i++) {
+  var item = arr[i];
+  promisesQueue.addPromise(doPromiseToItem, item);
+}
+
+promisesQueue.resolveAllSync({
+  text: 'BEGGINING OF TIME'
+}).then(function (arrResults) {
+  var duration = Math.round(((((new Date()).getTime()) - timestamp) / 1000) * 100) / 100;
+  console.log('ALL SOLVED in ' + duration + ' seconds.');
+  console.log('Results are:\n' + arrResults.join('\n'));
+});

@@ -23,9 +23,34 @@
 */
 
 /**
-  @overview The main of PSQueue.
+  @overview A test file for showing how Q.all works.
   @author Christian Adam
 */
 
 /* jshint node:true */
-module.exports = require('./psqueue');
+var Q = require('q'),
+  timestamp = (new Date()).getTime(),
+  arr = ['A', 'B', 'C'],
+  promises = [];
+
+function doPromiseToItem(item) {
+  var deferred = Q.defer();
+  var randomFactor = 10000 * Math.random();
+  setTimeout(function (rand) {
+    console.log(item + ' solved after random ' + (Math.round((rand / 1000) * 100) / 100) + ' secs.');
+    deferred.resolve(item);
+  }, randomFactor, randomFactor);
+  return deferred.promise;
+}
+
+for (var i = 0; i < arr.length; i++) {
+  var item = arr[i];
+  var promise = doPromiseToItem(item);
+  promises.push(promise);
+}
+
+Q.all(promises).then(function (arrResults) {
+  var duration = Math.round(((((new Date()).getTime()) - timestamp) / 1000) * 100) / 100;
+  console.log('ALL SOLVED in ' + duration + ' seconds.');
+  console.log('Results are:\n' + arrResults.join('\n'));
+});
